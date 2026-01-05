@@ -63,7 +63,7 @@ export default async function Home({
     range,
     (searchParams?.interval as Interval) || DEFAULT_INTERVAL
   )
-  const news = await fetchStockSearch("GC=F", 2)
+  const news = await fetchStockSearch("BTC-USD", 2)
 
   const promises = tickers.map(({ symbol }) =>
     yahooFinance.quoteCombine(symbol)
