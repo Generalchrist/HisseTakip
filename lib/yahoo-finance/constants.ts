@@ -1,7 +1,7 @@
 import type { Interval, Range } from "@/types/yahoo-finance"
 
 export const DEFAULT_TICKER = "THYAO.IS"
-export const DEFAULT_RANGE = "1w"
+export const DEFAULT_RANGE = "1d"
 export const DEFAULT_INTERVAL = "1m"
 export const DEFAULT_SCREENER = "most_actives"
 

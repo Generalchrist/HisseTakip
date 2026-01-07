@@ -6,7 +6,7 @@
 <p>1. Install dependencies:</p>
 
 ```
-npm install
+npm install --legacy-peer-deps
 ```
 
 <p>2. Generate prisma client</p>

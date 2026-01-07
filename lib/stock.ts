@@ -1,4 +1,7 @@
+import { Row } from "@tanstack/react-table";
+import { ScreenerQuote } from "yahoo-finance2/modules/screener";
 import { prisma } from "./prisma";
+import { getCurrentUser } from "./auth";
 
 export async function addFavoriteStock(
   userId: number,
@@ -14,9 +17,12 @@ export async function addFavoriteStock(
 }
 
 
-export async function getFavoriteStocks(userId: number) {
+export async function getFavoriteStocks() {
+  const user = await getCurrentUser();
+  if (!user) throw new Error("Unauthorized");
+  const id: number = user.id
   return prisma.favoriteStock.findMany({
-    where: { userId },
+    where: { userId: id },
     orderBy: { id: "desc" },
   });
 }
